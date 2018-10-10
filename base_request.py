@@ -1,16 +1,32 @@
+import logging
+import os
 import requests
 
 
 class BaseRequest(object):
     """The base request for dingtalk"""
+    logs_path = os.path.dirname(os.path.abspath(__file__))
     request_url = None
     request_methods_valid = [
         "get", "post", "put", "delete", "head", "options", "patch"
     ]
     
     def __init__(self):
-        self.logger = None
+        self.logger = self.set_logger()
         self._request_method = "get"
+    
+    def set_logger(self):
+        logger = logging.getLogger(__name__)
+        logger.setLevel(level=logging.INFO)
+        logger_file = os.path.join(self.logs_path, 'dingtalk_sdk.logs')
+        logger_handler = logging.FileHandler(logger_file)
+        logger_handler.setLevel(logging.INFO)
+        logger_formatter = logging.Formatter(
+            '%(asctime)s | %(name)s | %(levelname)s | %(message)s'
+        )
+        logger_handler.setFormatter(logger_formatter)
+        logger.addHandler(logger_handler)
+        return logger
     
     @property
     def request_method(self):
@@ -44,9 +60,8 @@ class BaseRequest(object):
         return response
     
     def get_json_response(self, **kwargs):
-        """This method is to catch the exception of ValueError, detail:
+        """This method aims at catching the exception of ValueError, detail:
         http://docs.python-requests.org/zh_CN/latest/user/quickstart.html#json
         """
         response = self.get_response(**kwargs)
         return response.json()
-
