@@ -18,15 +18,13 @@ class DeptRequest(BaseRequest):
     """
     request_url = settings.GET_DEPT
     
-    def get_dept_name(self, **kwargs):
+    def get_dept_name(self):
         """Method to get the department name"""
-        response = self.get_json_response(**kwargs)
-        return response.get("name", None)
+        return self.json_response.get("name", None)
     
-    def get_dept_manager_ids(self, **kwargs):
+    def get_dept_manager_ids(self):
         """Method to get the id list of department manager."""
-        response = self.get_json_response(**kwargs)
-        return response.get("deptManagerUseridList", None)
+        return self.json_response.get("deptManagerUseridList", None)
 
 
 class DeptsRequest(BaseRequest):
@@ -46,10 +44,9 @@ class DeptsRequest(BaseRequest):
     """
     request_url = settings.GET_DEPTS
     
-    def get_depts(self, **kwargs):
+    def get_depts(self):
         """Method to get the department list"""
-        response = self.get_json_response(**kwargs)
-        return response.get("department", None)
+        return self.json_response.get("department", None)
 
 
 class SubDeptIdsRequest(BaseRequest):
@@ -68,10 +65,9 @@ class SubDeptIdsRequest(BaseRequest):
     """
     request_url = settings.GET_SUB_DEPT_IDS
     
-    def get_sub_dept_ids(self, **kwargs):
+    def get_sub_dept_ids(self):
         """Method to get the department list"""
-        response = self.get_json_response(**kwargs)
-        return response.get("sub_dept_id_list", None)
+        return self.json_response.get("sub_dept_id_list", None)
 
 
 class ParentDeptPathRequest(BaseRequest):
@@ -90,7 +86,6 @@ class ParentDeptPathRequest(BaseRequest):
     """
     request_url = settings.GET_PARENT_DEPT_PATH
     
-    def get_parent_dept_path(self, **kwargs):
+    def get_parent_dept_path(self):
         """Method to get the department list"""
-        response = self.get_json_response(**kwargs)
-        return response.get("parentIds", None)
+        return self.json_response.get("parentIds", None)
