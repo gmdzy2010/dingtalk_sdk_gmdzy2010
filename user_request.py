@@ -18,21 +18,18 @@ class DeptUserRequest(BaseRequest):
     """
     request_url = settings.GET_DEPT_USER
     
-    def get_unionid(self, **kwargs):
+    def get_unionid(self):
         """Method to get the unionid"""
-        response = self.get_json_response(**kwargs)
-        return response.get("unionid", None)
+        return self.json_response.get("unionid", None)
     
-    def get_openid(self, **kwargs):
+    def get_openid(self):
         """Method to get the openid"""
-        response = self.get_json_response(**kwargs)
-        return response.get("openid", None)
+        return self.json_response.get("openid", None)
     
-    def get_userinfo(self, **kwargs):
+    def get_userinfo(self):
         """Method to get current user's name, mobile, email and position."""
-        response = self.get_json_response(**kwargs)
         wanted_fields = ["name", "mobile", "orgEmail", "position", "avatar"]
-        userinfo = {key: response.get(key, None) for key in wanted_fields}
+        userinfo = {k: self.json_response.get(k, None) for k in wanted_fields}
         return userinfo
 
 
@@ -52,10 +49,9 @@ class AdminUsersRequest(BaseRequest):
     """
     request_url = settings.GET_ADMIN_USERS
     
-    def get_admin_ids(self, **kwargs):
+    def get_admin_ids(self):
         """Method to get the administrator id list."""
-        response = self.get_json_response(**kwargs)
-        admins = response.get("admin_list", None)
+        admins = self.json_response.get("admin_list", None)
         admin_ids = [admin_id for admin_id in admins["userid"]]
         return admin_ids
 
@@ -77,11 +73,10 @@ class DeptUsersRequest(BaseRequest):
     """
     request_url = settings.GET_DEPT_USERS
     
-    def get_dept_users_detail(self, **kwargs):
+    def get_dept_users_detail(self):
         """Method to get the userinfo list in detail for the specified
         department."""
-        response = self.get_json_response(**kwargs)
-        dept_users_detail = response.get("userlist", None)
+        dept_users_detail = self.json_response.get("userlist", None)
         return dept_users_detail
 
 
@@ -102,10 +97,9 @@ class DeptUsersSimpleRequest(BaseRequest):
     """
     request_url = settings.GET_DEPT_USERS_SIMPLE
     
-    def get_dept_users_brief(self, **kwargs):
+    def get_dept_users_brief(self):
         """Method to get set that contain userid and name."""
-        response = self.get_json_response(**kwargs)
-        dept_users_brief = response.get("userlist", None)
+        dept_users_brief = self.json_response.get("userlist", None)
         return dept_users_brief
 
 
@@ -125,8 +119,7 @@ class DeptUserIdsRequest(BaseRequest):
     """
     request_url = settings.GET_DEPT_USER_IDS
     
-    def get_dept_user_ids(self, **kwargs):
+    def get_dept_user_ids(self):
         """Method to get all department members."""
-        response = self.get_json_response(**kwargs)
-        dept_user_ids = response.get("userIds", None)
+        dept_user_ids = self.json_response.get("userIds", None)
         return dept_user_ids
