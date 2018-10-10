@@ -11,18 +11,24 @@ class BaseRequest(object):
         "get", "post", "put", "delete", "head", "options", "patch"
     ]
     
-    def __init__(self):
+    def __init__(self, **kwargs):
+        self.kwargs = kwargs
         self.logger = self.set_logger()
+        self.response = self.get_response()
+        self.json_response = self.get_json_response()
+        self.call_status = self.get_call_status()
         self._request_method = "get"
     
     def set_logger(self):
+        """Method to build the base logging system. By default, logging level
+        is set to INFO."""
         logger = logging.getLogger(__name__)
         logger.setLevel(level=logging.INFO)
         logger_file = os.path.join(self.logs_path, 'dingtalk_sdk.logs')
         logger_handler = logging.FileHandler(logger_file)
         logger_handler.setLevel(logging.INFO)
         logger_formatter = logging.Formatter(
-            '%(asctime)s | %(name)s | %(levelname)s | %(message)s'
+            '[%(asctime)s | %(name)s | %(levelname)s] %(message)s'
         )
         logger_handler.setFormatter(logger_formatter)
         logger.addHandler(logger_handler)
@@ -46,7 +52,7 @@ class BaseRequest(object):
                 "" % (method_str, ",".join(self.request_methods_valid))
             )
     
-    def get_response(self, **kwargs):
+    def get_response(self):
         """Get the original response of requests"""
         request = getattr(requests, self.request_method, None)
         if request is None and self._request_method is None:
@@ -56,12 +62,17 @@ class BaseRequest(object):
                 "Fatal error occurred, the class property \"request_url\" is"
                 "set to None, reset it with an effective url of dingtalk api."
             )
-        response = request(self.request_url, **kwargs)
+        response = request(self.request_url, **self.kwargs)
         return response
     
-    def get_json_response(self, **kwargs):
+    def get_json_response(self):
         """This method aims at catching the exception of ValueError, detail:
         http://docs.python-requests.org/zh_CN/latest/user/quickstart.html#json
         """
-        response = self.get_response(**kwargs)
+        response = self.get_response()
         return response.json()
+    
+    def get_call_status(self):
+        """The global status of api calling."""
+        error_code = self.json_response.get("errcode", None)
+        return True if error_code == 0 else False
