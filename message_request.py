@@ -18,6 +18,30 @@ class WorkNoticeRequest(BaseRequest):
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/pgoxpy
     """
     request_url = settings.SEND_WORK_NOTICE
+    task_id = None
+    
+    def get_task_id(self):
+        """Method to get all department members."""
+        task_id = self.json_response.get("task_id", None)
+        return task_id
+
+
+class GetWorkNoticeSendProgressRequest(BaseRequest):
+    """
+    Description: parameters of <userid_list> and <dept_id_list> should NOT keep
+    null simultaneously, or request would fail. TODO
+
+    parameter_R: <access_token>
+    parameter_O: None
+
+    post_data_R: <agent_id>, <msg>
+    post_data_O: <userid_list>, <dept_id_list>, <to_all_user>
+
+    Return: send result json response
+
+    doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/pgoxpy
+    """
+    request_url = settings.GET_WORK_NOTICE_SEND_PROGRESS
 
 
 class CreateGroupChatRequest(BaseRequest):
@@ -36,10 +60,9 @@ class CreateGroupChatRequest(BaseRequest):
     """
     request_url = settings.CREATE_GROUP_CHAT
     
-    def get_chat_id(self, **kwargs):
+    def get_chat_id(self):
         """Method to get chatid of group created."""
-        response = self.get_json_response(**kwargs)
-        chat_id = response.get("chatid", None)
+        chat_id = self.json_response.get("chatid", None)
         return chat_id
 
 
@@ -77,10 +100,9 @@ class GetGroupChatRequest(BaseRequest):
     request_url = settings.UPDATE_GROUP_CHAT
     chat_info = None
     
-    def get_chat_info(self, **kwargs):
+    def get_chat_info(self):
         """Method to get chatid of group created."""
-        response = self.get_json_response(**kwargs)
-        chat_info = response.get("chat_info", None)
+        chat_info = self.json_response.get("chat_info", None)
         self.chat_info = chat_info
         return chat_info
     
@@ -105,10 +127,9 @@ class SendGroupChatRequest(BaseRequest):
     """
     request_url = settings.SEND_GROUP_CHAT
     
-    def get_message_id(self, **kwargs):
+    def get_message_id(self):
         """Method to get messageId of group created."""
-        response = self.get_json_response(**kwargs)
-        message_id = response.get("messageId", None)
+        message_id = self.json_response.get("messageId", None)
         return message_id
 
 
@@ -128,9 +149,7 @@ class GetReadGroupChatUserIdsRequest(BaseRequest):
     """
     request_url = settings.GET_READ_USERS
     
-    def get_read_user_ids(self, **kwargs):
+    def get_read_user_ids(self):
         """Method to get chatid of group created."""
-        response = self.get_json_response(**kwargs)
-        read_user_ids = response.get("readUserIdList", None)
+        read_user_ids = self.json_response.get("readUserIdList", None)
         return read_user_ids
-
