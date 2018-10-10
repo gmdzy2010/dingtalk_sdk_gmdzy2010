@@ -14,15 +14,15 @@ class AccessTokenRequest(BaseRequest):
     post_data_R: None
     post_data_O: None
 
-    Return: TODO
+    Return: the access_token of dingtalk api.
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/vt6v7m
     """
     request_url = settings.GET_TOKEN
     
-    def get_access_token(self, **kwargs):
-        json_response = self.get_json_response(**kwargs)
-        access_token = json_response.get("access_token", None)
+    def get_access_token(self):
+        access_token = self.json_response.get("access_token", None)
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return access_token
 
 
@@ -42,6 +42,5 @@ class AuthAddressBookRequest(BaseRequest):
     """
     request_url = settings.AUTH_ADDRESS_BOOK
     
-    def get_auth_org_scopes(self, **kwargs):
-        response = self.get_json_response(**kwargs)
-        return response.get("auth_org_scopes", None)
+    def get_auth_org_scopes(self):
+        return self.json_response.get("auth_org_scopes", None)
