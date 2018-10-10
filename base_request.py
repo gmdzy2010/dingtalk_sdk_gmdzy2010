@@ -14,8 +14,8 @@ class BaseRequest(object):
     def __init__(self, **kwargs):
         self.kwargs = kwargs
         self.logger = self.set_logger()
-        self.response = self.get_response()
-        self.json_response = self.get_json_response()
+        self.response = None
+        self.json_response = None
         self.call_status = self.get_call_status()
         self._request_method = "get"
     
@@ -63,16 +63,19 @@ class BaseRequest(object):
                 "set to None, reset it with an effective url of dingtalk api."
             )
         response = request(self.request_url, **self.kwargs)
+        self.response = response
         return response
     
     def get_json_response(self):
         """This method aims at catching the exception of ValueError, detail:
         http://docs.python-requests.org/zh_CN/latest/user/quickstart.html#json
         """
-        response = self.get_response()
-        return response.json()
+        self.json_response = self.get_response().json()
+        return self.json_response
     
     def get_call_status(self):
         """The global status of api calling."""
-        error_code = self.json_response.get("errcode", None)
-        return True if error_code == 0 else False
+        if self.json_response is not None:
+            error_code = self.json_response.get("errcode", None)
+            return True if error_code == 0 else False
+        return False
