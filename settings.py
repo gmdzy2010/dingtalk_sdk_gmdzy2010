@@ -57,7 +57,7 @@ WORK_NOTICE_ROOT = URL_ROOT + "topapi/message/corpconversation/"
 
 SEND_WORK_NOTICE = WORK_NOTICE_ROOT + "asyncsend_v2"
 
-GET_SEND_PROGRESS = WORK_NOTICE_ROOT + "getsendprogress"
+GET_WORK_NOTICE_SEND_PROGRESS = WORK_NOTICE_ROOT + "getsendprogress"
 
 # The group and group chat
 
@@ -72,4 +72,3 @@ GET_GROUP_CHAT = CHAT_ROOT + "get"
 SEND_GROUP_CHAT = CHAT_ROOT + "send"
 
 GET_READ_USERS = CHAT_ROOT + "getReadList"
-
