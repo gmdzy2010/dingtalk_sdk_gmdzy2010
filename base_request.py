@@ -75,6 +75,7 @@ class BaseRequest(object):
     
     def get_call_status(self):
         """The global status of api calling."""
+        # TODO: fix the bugs that the attribute always keep False
         if self.json_response is not None:
             error_code = self.json_response.get("errcode", None)
             return True if error_code == 0 else False
