@@ -36,11 +36,11 @@ class CreateGroupChatRequest(BaseRequest):
     """
     request_url = settings.CREATE_GROUP_CHAT
     
-    def get_chatid(self, **kwargs):
+    def get_chat_id(self, **kwargs):
         """Method to get chatid of group created."""
         response = self.get_json_response(**kwargs)
-        chatid = response.get("chatid", None)
-        return chatid
+        chat_id = response.get("chatid", None)
+        return chat_id
 
 
 class UpdateGroupChatRequest(BaseRequest):
