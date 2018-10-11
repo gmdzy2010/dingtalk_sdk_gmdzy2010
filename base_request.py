@@ -71,11 +71,13 @@ class BaseRequest(object):
         http://docs.python-requests.org/zh_CN/latest/user/quickstart.html#json
         """
         self.json_response = self.get_response().json()
+        if self.json_response is not None:
+            error_code = self.json_response.get("errcode", None)
+            self.call_status = True if error_code == 0 else False
         return self.json_response
     
     def get_call_status(self):
         """The global status of api calling."""
-        # TODO: fix the bugs that the attribute always keep False
         if self.json_response is not None:
             error_code = self.json_response.get("errcode", None)
             return True if error_code == 0 else False
