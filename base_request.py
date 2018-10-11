@@ -16,7 +16,7 @@ class BaseRequest(object):
         self.logger = self.set_logger()
         self.response = None
         self.json_response = None
-        self.call_status = self.get_call_status()
+        self.call_status = False
         self._request_method = "get"
     
     def set_logger(self):
@@ -78,7 +78,4 @@ class BaseRequest(object):
     
     def get_call_status(self):
         """The global status of api calling."""
-        if self.json_response is not None:
-            error_code = self.json_response.get("errcode", None)
-            return True if error_code == 0 else False
-        return False
+        return self.call_status
