@@ -1,5 +1,5 @@
-import settings
-from base_request import BaseRequest
+from dingtalk_sdk_gmdzy2010 import settings
+from dingtalk_sdk_gmdzy2010.base_request import BaseRequest
 
 
 class WorkNoticeRequest(BaseRequest):
@@ -37,11 +37,38 @@ class GetWorkNoticeSendProgressRequest(BaseRequest):
     post_data_R: <agent_id>, <msg>
     post_data_O: <userid_list>, <dept_id_list>, <to_all_user>
 
-    Return: send result json response
+    Return: send progress json response
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/pgoxpy
     """
     request_url = settings.GET_WORK_NOTICE_SEND_PROGRESS
+    
+    def get_progress(self):
+        """Method to get the progress of work notice sending."""
+        progress = self.json_response.get("progress", None)
+        return progress
+
+
+class GetWorkNoticeSendResultRequest(BaseRequest):
+    """
+    Description: TODO
+
+    parameter_R: <access_token>
+    parameter_O: None
+
+    post_data_R: None
+    post_data_O: <agent_id>, <task_id>
+
+    Return: send result json response
+
+    doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/pgoxpy
+    """
+    request_url = settings.GET_WORK_NOTICE_SEND_RESULT
+    
+    def get_send_result(self):
+        """Method to get the progress of work notice sending."""
+        send_result = self.json_response.get("send_result", None)
+        return send_result
 
 
 class CreateGroupChatRequest(BaseRequest):
