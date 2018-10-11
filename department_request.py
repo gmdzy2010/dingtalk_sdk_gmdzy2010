@@ -1,5 +1,5 @@
-import settings
-from base_request import BaseRequest
+from dingtalk_sdk_gmdzy2010 import settings
+from dingtalk_sdk_gmdzy2010.base_request import BaseRequest
 
 
 class DeptRequest(BaseRequest):
