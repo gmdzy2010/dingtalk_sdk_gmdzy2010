@@ -1,18 +1,55 @@
-# dingtalk_sdk
-the `non`-official python sdk for dingtalk
+## 钉钉`非官方版`SDK
 
-The offical sdk that dingtalk supplied are only Java, PHP and Node.js, what a shame for the absent of Python :), so the team "gmdzy2010" (only one member for now) take this job and now release the dev-plan:
+### 项目简介
+--------------------  
+本SDK非官方提供，但是鉴于本身代码简单，楼主三观正且能力有限（划重点），大可不必担心在SDK当中有什么恶意代码，不存在的； 
+钉钉官方只提供了java，node.js以及php版sdk，python版没有？？？，恰好最近业务需要，遂准备给钉钉写一整套SDK，不过钉钉的全部API有200+，测试是个大工程，其中很多业务用不上，所以先把基本的功能实现，后续的更新会把所有的功能陆陆续续补全，放出更新计划
 
-### STAGE 1
->`Authority`
+### 目前进度
+--------------------  
+项目的进度根据钉钉的官方文档结构编写
 
-### STAGE 2
->The `user management` and `department management`
+#### 用户认证
 
-### STAGE 3
->The `message` part. There are some structure chaos in my view, work notice and group message originated from two distinct url: .../topapi/... and .../chat/..., fairyly strange.
+|接口名称|已完成/总数|  
+|:---|:---|  
+|用户认证|1/1|  
 
-#### To be continued...
->...
+#### 通讯录管理
 
-Thanks for your patience :)
+|接口名称|已完成/总数|  
+|:---|:---|  
+|通讯录权限范围|1/1|  
+|用户管理|5/12|  
+|部门管理|4/9|  
+|角色管理||  
+|外部联系人管理||  
+|通讯录同步方案||  
+
+#### 应用管理
+
+|接口名称|已完成/总数|  
+|:---|:---|  
+|应用管理|0/6|  
+
+#### 消息通知
+
+|接口名称|已完成/总数|
+|:---|:---|
+|工作通知|3/3|
+|群消息|5/5|
+|普通消息|0/1|
+|第三方个人应用发消息|0/1|
+
+
+### 更新日志
+--------------------  
+>
+>
+
+### 致谢
+--------------------  
+感谢自己的辛勤付出:) 
+感谢钉钉的官方文档 
+感谢大家的关注与耐心
+
