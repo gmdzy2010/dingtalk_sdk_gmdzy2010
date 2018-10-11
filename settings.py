@@ -5,11 +5,11 @@ This module contain the global settings for the python sdk of dingtalk
 
 # Authentications
 
-appkey = ""
+appkey = "your_key"
 
-appsecret = ""
+appsecret = "your_secret"
 
-agent_id = 
+agent_id = 00000000
 
 
 # The root url of dingtalk api
@@ -58,6 +58,8 @@ WORK_NOTICE_ROOT = URL_ROOT + "topapi/message/corpconversation/"
 SEND_WORK_NOTICE = WORK_NOTICE_ROOT + "asyncsend_v2"
 
 GET_WORK_NOTICE_SEND_PROGRESS = WORK_NOTICE_ROOT + "getsendprogress"
+
+GET_WORK_NOTICE_SEND_RESULT = WORK_NOTICE_ROOT + "getsendresult"
 
 # The group and group chat
 
