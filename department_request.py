@@ -44,9 +44,15 @@ class DeptsRequest(BaseRequest):
     """
     request_url = settings.GET_DEPTS
     
-    def get_depts(self):
-        """Method to get the department list"""
-        return self.json_response.get("department", None)
+    def get_depts(self, dept_name=None):
+        """Method to get department by name."""
+        depts = self.json_response.get("department", None)
+        params = self.kwargs.get("params", None)
+        fetch_child = params.get("fetch_child", True) if params else True
+        if dept_name is not None:
+            depts = [dept for dept in depts if dept["name"] == dept_name]
+        depts = [{"id": dept["id"], "name": dept["name"]} for dept in depts]
+        return depts if fetch_child else depts[0]
 
 
 class SubDeptIdsRequest(BaseRequest):
