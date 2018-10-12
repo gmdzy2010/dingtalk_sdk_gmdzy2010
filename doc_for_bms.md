@@ -21,7 +21,7 @@ pip install dingtalk-sdk-gmdzy2010
 #### STEP 2. 获取钉钉接口access_token
 首先将`appkey`和`appsecret`配置到项目的`settings.py`文件当中，再将这两个变量配置如下
 ```python
-from your_project.settings import appkey, appsecret
+from your_project.settings import appkey, appsecret, agent_id
 from dingtalk_sdk_gmdzy2010.authority_request import AccessTokenRequest
 
 
