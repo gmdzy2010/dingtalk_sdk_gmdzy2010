@@ -51,6 +51,10 @@
 ### 更新日志
 --------------------  
 
+#### v0.2.3 2018/10/11
+1.更新`DeptsRequest`模块按部门名称获取id的方法`get_depts`      
+2.针对生产使用写了一个简单的[代码示例文档](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/doc_for_bms.md)  
+
 #### v0.2.2 2018/10/11
 1.已发布至pypi，包名称`dingtalk-sdk-gmdzy2010`      
 2.修复0.2.1发布版本settings模块导入的bug       
