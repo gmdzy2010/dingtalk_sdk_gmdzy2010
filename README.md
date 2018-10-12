@@ -9,7 +9,7 @@
     
 ### 目前进度
 --------------------  
-项目的进度根据钉钉的官方文档结构编写
+项目的进度根据钉钉的官方文档结构编写      
 不知道怎么用？这里有一个[代码示例文档](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/blob/master/doc_for_bms.md)
 
 #### 用户认证
