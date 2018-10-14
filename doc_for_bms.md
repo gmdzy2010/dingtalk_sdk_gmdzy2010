@@ -9,17 +9,19 @@
 ### 接口使用步骤
 --------------------  
 
-项目的进度根据钉钉的官方文档结构编写，仅给出示例代码
+项目的进度根据钉钉的官方文档结构编写，仅给出示例代码，工具函数可以按需自行优化。
 
 
 #### STEP 1. 安装钉钉python版SDK
-
+第一步需要安装本SDK
 ```bash
 pip install dingtalk-sdk-gmdzy2010
 ```
+注意目前pypi最新版为0.2.2。      
 
 #### STEP 2. 获取钉钉接口access_token
-首先将`appkey`和`appsecret`配置到项目的`settings.py`文件当中，再将这两个变量配置如下
+将`appkey`，`appsecret`以及`agent_id`配置到项目的`settings.py`文件当中，再将这两个变量导入相应模块。
+以下给出示例代码，用appkey与appsecret换取钉钉接口密钥
 ```python
 from your_project.settings import appkey, appsecret, agent_id
 from dingtalk_sdk_gmdzy2010.authority_request import AccessTokenRequest
@@ -33,7 +35,7 @@ access_token = request.get_access_token()
 这样就获取到了access_token，之后的所有接口调用都需要这个token，其有效期为2小时，超时后刷新即可
 
 #### STEP 3. 按部门名称获取二级部门及其子部门成员的ID及姓名
-钉钉官方接口没有提供按名称获取各级部门的接口，所以我们只能按子部门逐级递归获取部门ID   
+钉钉官方接口没有提供按名称获取各级部门ID的接口，所以我们只能按子部门逐级递归获取部门ID   
 
 以下示例代码获取到`科技服务事业部`的所有子部门（包括子部门的子部门）的成员
 
@@ -82,7 +84,7 @@ get_level_2_depts_params = {
 get_level_2_depts = DeptsRequest(params=get_level_2_depts_params)
 get_level_2_depts.get_json_response()
 
-# 以下get_depts方法需要更新
+# 以下get_depts方法需要更新，同时等待pypi SDK版本更新
 level_2_depts = get_level_2_depts.get_depts(dept_name="科技服务事业部")
 sub_dept_ids = recruit_dept_ids(init_ids=[level_2_depts["id"]],
                                 total_ids=[level_2_depts["id"]],
@@ -90,7 +92,7 @@ sub_dept_ids = recruit_dept_ids(init_ids=[level_2_depts["id"]],
 sub_dept_users = get_sub_dept_users(dept_ids=sub_dept_ids)
 print(sub_dept_users)
 ```
-
+这样便获取到了指定级别部门管辖下的所有员工。
 #### STEP 4. 根据成员ID发送钉钉工作通知
 
 以下示例代码将工作通知发送至相应ID（user_id）的成员，注意data的userid_list字段传入的是一个成员id列表，实际使用时直接传入要发送的成员即可
