@@ -9,8 +9,7 @@
     
 ### 目前进度
 --------------------  
-项目的进度根据钉钉的官方文档结构编写      
-这里有一个[使用文档](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/blob/master/doc_for_bms.md)
+项目的进度根据钉钉的官方文档结构编写，这里有一个[使用文档](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/blob/master/doc_for_bms.md)
 
 #### 用户认证
 
@@ -55,7 +54,6 @@
 #### v0.2.4 2018/10/15
 1.更新所有类描述__doc__      
 
-
 #### v0.2.3 2018/10/12
 1.更新`DeptsRequest`模块按部门名称获取id的方法`get_depts`      
 2.针对生产使用写了一个简单的[代码示例文档](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/blob/master/doc_for_bms.md)  
@@ -73,7 +71,6 @@
 2.完善__doc__注释   
 3.`NEW!`新增群消息创建/修改/已读状态查询    
 4.`NEW!`新增工作通知消息发送状态/结果查询    
-
 
 
 ### 致谢
