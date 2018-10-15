@@ -4,8 +4,9 @@ from dingtalk_sdk_gmdzy2010.base_request import BaseRequest
 
 class WorkNoticeRequest(BaseRequest):
     """
-    Description: parameters of <userid_list> and <dept_id_list> should NOT keep
-    null simultaneously, or request would fail. TODO
+    Description: The WorkNoticeRequest send work notice to specified user
+    (userid), parameters of <userid_list> and <dept_id_list> should NOT keep
+    null simultaneously, or request would fail
 
     parameter_R: <access_token>
     parameter_O: None
@@ -28,8 +29,8 @@ class WorkNoticeRequest(BaseRequest):
 
 class GetWorkNoticeSendProgressRequest(BaseRequest):
     """
-    Description: parameters of <userid_list> and <dept_id_list> should NOT keep
-    null simultaneously, or request would fail. TODO
+    Description: The response of GetWorkNoticeSendProgressRequest shows the
+    progress of sending work notice
 
     parameter_R: <access_token>
     parameter_O: None
@@ -37,7 +38,7 @@ class GetWorkNoticeSendProgressRequest(BaseRequest):
     post_data_R: <agent_id>, <msg>
     post_data_O: <userid_list>, <dept_id_list>, <to_all_user>
 
-    Return: send progress json response
+    Return: the progress of sending work notice
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/pgoxpy
     """
@@ -51,7 +52,8 @@ class GetWorkNoticeSendProgressRequest(BaseRequest):
 
 class GetWorkNoticeSendResultRequest(BaseRequest):
     """
-    Description: TODO
+    Description: The response of GetWorkNoticeSendResultRequest shows the
+    result of sending work notice
 
     parameter_R: <access_token>
     parameter_O: None
@@ -73,7 +75,8 @@ class GetWorkNoticeSendResultRequest(BaseRequest):
 
 class CreateGroupChatRequest(BaseRequest):
     """
-    Description: TODO
+    Description: The CreateGroupChatRequest aims to create a group chat for
+    some user(userid)
 
     parameter_R: <access_token>
     parameter_O: None
@@ -95,7 +98,8 @@ class CreateGroupChatRequest(BaseRequest):
 
 class UpdateGroupChatRequest(BaseRequest):
     """
-    Description: TODO
+    Description: The UpdateGroupChatRequest aims to update the group chat such
+    as the user list, name or something else
 
     parameter_R: <access_token>
     parameter_O: None
@@ -112,7 +116,8 @@ class UpdateGroupChatRequest(BaseRequest):
 
 class GetGroupChatRequest(BaseRequest):
     """
-    Description: TODO
+    Description: The GetGroupChatRequest aims to get information of a existed
+    group chat by chatid
 
     parameter_R: <access_token>
     parameter_O: None
@@ -140,7 +145,7 @@ class GetGroupChatRequest(BaseRequest):
 
 class SendGroupChatRequest(BaseRequest):
     """
-    Description: TODO
+    Description: The SendGroupChatRequest aims to send group chat message
 
     parameter_R: <access_token>
     parameter_O: None
@@ -148,7 +153,7 @@ class SendGroupChatRequest(BaseRequest):
     post_data_R: <chatid>, <msg>
     post_data_O: None
 
-    Return: the chatid of group create json response
+    Return: the message id of group chat
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/isu6nk
     """
@@ -162,7 +167,8 @@ class SendGroupChatRequest(BaseRequest):
 
 class GetReadGroupChatUserIdsRequest(BaseRequest):
     """
-    Description: TODO
+    Description: The GetReadGroupChatUserIdsRequest aims to get the user id
+    list of whom has read message by messageId
 
     parameter_R: <access_token>, <messageId>, <cursor>, <size>
     parameter_O: None
@@ -170,7 +176,7 @@ class GetReadGroupChatUserIdsRequest(BaseRequest):
     post_data_R: <chatid>, <msg>
     post_data_O: None
 
-    Return: the chatid of group create json response
+    Return: the user id list which has read the message
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/isu6nk
     """
