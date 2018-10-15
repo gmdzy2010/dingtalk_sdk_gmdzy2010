@@ -4,13 +4,13 @@
 --------------------  
 本SDK非官方提供，代码简单，同时不必担心在SDK当中有什么恶意代码。   
 钉钉官方只提供了java，node.js以及php版sdk，python版没有？恰好最近业务需要，遂准备给钉钉写一整套SDK，不过钉钉的全部API有200+，测试是个大工程，其中很多业务用不上，所以先把基本的功能实现，后续的更新会把所有的功能陆陆续续补全，放出更新计划   
-    
-    
+
+### 使用帮助
+1.[SDK文档](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/blob/master/docs.md)        
+2.[使用示例](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/blob/master/doc_for_bms.md)      
     
 ### 目前进度
 --------------------  
-项目的进度根据钉钉的官方文档结构编写，这里有一个[使用文档](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/blob/master/doc_for_bms.md)
-
 #### 用户认证
 
 |接口名称|已完成/总数|  
@@ -53,10 +53,11 @@
 
 #### v0.2.4 2018/10/15
 1.更新所有类描述__doc__      
+2.为目前版本的SDK写了所有文档
 
 #### v0.2.3 2018/10/12
 1.更新`DeptsRequest`模块按部门名称获取id的方法`get_depts`      
-2.针对生产使用写了一个简单的[代码示例文档](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/blob/master/doc_for_bms.md)  
+2.针对生产使用写了一个简单的[使用示例](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/blob/master/doc_for_bms.md)  
 
 #### v0.2.2 2018/10/11
 1.已发布至pypi，包名称`dingtalk-sdk-gmdzy2010`      
