@@ -28,8 +28,8 @@ class AccessTokenRequest(BaseRequest):
 
 class AuthAddressBookRequest(BaseRequest):
     """
-    Description: This response of this request show the scopes of current 
-    requester owns.
+    Description: The response of AuthAddressBookRequest contains the scopes of
+    current requester owns.
 
     parameter_R: <access_token>
     parameter_O: None
@@ -37,7 +37,7 @@ class AuthAddressBookRequest(BaseRequest):
     post_data_R: None
     post_data_O: None
 
-    Return: the department id list.
+    Return: the department id list which is authorized.
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/vt6v7m
     """
