@@ -2,7 +2,7 @@
 
 ### 背景
 --------------------  
-本说明文档基于0.2.2版本，已完全可以满足BMS系统调用，后续更复杂的功能再逐步增加
+本说明文档基于0.2.4版本，后续更复杂的功能再逐步增加
     
     
     
@@ -17,7 +17,7 @@
 ```bash
 pip install dingtalk-sdk-gmdzy2010
 ```
-注意目前pypi最新版为0.2.2。      
+注意目前pypi最新版为0.2.4。      
 
 #### STEP 2. 获取钉钉接口access_token
 将`appkey`，`appsecret`以及`agent_id`配置到项目的`settings.py`文件当中，再将这两个变量导入相应模块。
@@ -84,7 +84,7 @@ get_level_2_depts_params = {
 get_level_2_depts = DeptsRequest(params=get_level_2_depts_params)
 get_level_2_depts.get_json_response()
 
-# 以下get_depts方法需要更新，同时等待pypi SDK版本更新
+# 以下get_depts方法在0.2.4版本才有
 level_2_depts = get_level_2_depts.get_depts(dept_name="科技服务事业部")
 sub_dept_ids = recruit_dept_ids(init_ids=[level_2_depts["id"]],
                                 total_ids=[level_2_depts["id"]],
@@ -109,7 +109,7 @@ data = {
     "msg": {
         "msgtype": "text",
         "text": {
-            "content": "【测试通知】测试消息8"
+            "content": "【测试通知】测试消息"
         }
     }
 }
@@ -118,6 +118,15 @@ request.request_method = "post"
 request.get_json_response()
 response = request.json_response
 print(response)
+```
+
+#### STEP 5. 根据工作通知ID查询发送进度与发送结果
+
+待续
+
+```python
+# to be continued...
+
 ```
 
 
