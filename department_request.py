@@ -4,7 +4,8 @@ from dingtalk_sdk_gmdzy2010.base_request import BaseRequest
 
 class DeptRequest(BaseRequest):
     """
-    Description: TODO
+    Description: The response of DeptRequest contains detail of specified
+    department by parameter <id>
 
     parameter_R: <access_token>, <id> (department_id)
     parameter_O: None
@@ -12,7 +13,7 @@ class DeptRequest(BaseRequest):
     post_data_R: None
     post_data_O: None
 
-    Return: TODO
+    Return: all information fields for specified department
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/dubakq
     """
@@ -29,8 +30,10 @@ class DeptRequest(BaseRequest):
 
 class DeptsRequest(BaseRequest):
     """
-    Description: fetch_child (Bool, default is True,
-    it decides whether recursively response the sub-department). TODO
+    Description: The response of DeptsRequest contains a department list, but
+    each element just contain the main fields of id, name, parentid,
+    createDeptGroup and autoAddUser. fetch_child (Bool, default is True,
+    it decides whether recursively response the sub-department)
 
     parameter_R: <access_token>, <id> (department_id)
     parameter_O: <fetch_child>
@@ -38,7 +41,7 @@ class DeptsRequest(BaseRequest):
     post_data_R: None
     post_data_O: None
 
-    Return: TODO
+    Return: a department list briefed
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/dubakq
     """
@@ -57,7 +60,8 @@ class DeptsRequest(BaseRequest):
 
 class SubDeptIdsRequest(BaseRequest):
     """
-    Description: TODO
+    Description: The response of SubDeptIdsRequest contains the id list of sub
+    department for specified department by id
 
     parameter_R: <access_token>, <id> (department_id)
     parameter_O: None
@@ -65,7 +69,7 @@ class SubDeptIdsRequest(BaseRequest):
     post_data_R: None
     post_data_O: None
 
-    Return: TODO
+    Return: the id list of sub department
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/dubakq
     """
@@ -78,7 +82,9 @@ class SubDeptIdsRequest(BaseRequest):
 
 class ParentDeptPathRequest(BaseRequest):
     """
-    Description: TODO
+    Description: The response of ParentDeptPathRequest aimed at showing the
+    department tree reversely, the path, i.e, find the path from the initial
+    leaf node to the root node.
 
     parameter_R: <access_token>, <id> (department_id)
     parameter_O: None
@@ -86,7 +92,7 @@ class ParentDeptPathRequest(BaseRequest):
     post_data_R: None
     post_data_O: None
 
-    Return: TODO
+    Return: the path to root node(id)
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/dubakq
     """
