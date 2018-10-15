@@ -4,7 +4,8 @@ from dingtalk_sdk_gmdzy2010.base_request import BaseRequest
 
 class DeptUserRequest(BaseRequest):
     """
-    Description: TODO
+    Description: The response of DeptUserRequest contains a department member's
+    detail information specified by userid
 
     parameter_R: <access_token>, <userid>
     parameter_O: None
@@ -12,7 +13,7 @@ class DeptUserRequest(BaseRequest):
     post_data_R: None
     post_data_O: None
 
-    Return: TODO
+    Return: a department member's detail information specified by userid
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/ege851
     """
@@ -35,7 +36,8 @@ class DeptUserRequest(BaseRequest):
 
 class AdminUsersRequest(BaseRequest):
     """
-    Description: TODO
+    Description: The response of AdminUsersRequest contains all admin user's id
+    list
 
     parameter_R: <access_token>
     parameter_O: None
@@ -43,7 +45,7 @@ class AdminUsersRequest(BaseRequest):
     post_data_R: None
     post_data_O: None
 
-    Return: TODO
+    Return: admin user's id list
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/ege851
     """
@@ -58,8 +60,10 @@ class AdminUsersRequest(BaseRequest):
 
 class DeptUsersRequest(BaseRequest):
     """
-    Description: only parameters of offset and size set at the same time, the
-    function of page query could be effective. TODO
+    Description: The response of DeptUsersRequest contains all members detailed
+    information for specified department by department_id. Only parameters of
+    offset and size set at the same time, the function of page query could be
+    effective
 
     parameter_R: <access_token>, <department_id>, <offset>, <size>
     parameter_O: <order>
@@ -67,7 +71,8 @@ class DeptUsersRequest(BaseRequest):
     post_data_R: None
     post_data_O: None
 
-    Return: TODO
+    Return: all members detailed information for specified department by
+    department_id
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/ege851
     """
@@ -82,8 +87,8 @@ class DeptUsersRequest(BaseRequest):
 
 class DeptUsersSimpleRequest(BaseRequest):
     """
-    Description: only parameters of offset and size set simultaneously, the
-    function of page query could be effective. TODO
+    Description: The response of DeptUsersSimpleRequest contains all members
+    brief information for specified department by department_id.
 
     parameter_R: <access_token>, <department_id>
     parameter_O: <offset>, <size>, <order>
@@ -91,7 +96,8 @@ class DeptUsersSimpleRequest(BaseRequest):
     post_data_R: None
     post_data_O: None
 
-    Return: a couple of message of users
+    Return: all members brief information for specified department by
+    department_id
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/ege851
     """
@@ -105,7 +111,8 @@ class DeptUsersSimpleRequest(BaseRequest):
 
 class DeptUserIdsRequest(BaseRequest):
     """
-    Description: TODO
+    Description: The response of DeptUserIdsRequest contains a member id list
+    for specified department by deptId.
 
     parameter_R: <access_token>, <deptId>
     parameter_O: None
@@ -113,7 +120,7 @@ class DeptUserIdsRequest(BaseRequest):
     post_data_R: None
     post_data_O: None
 
-    Return: TODO
+    Return: a member id list for specified department by deptId.
 
     doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/ege851
     """
