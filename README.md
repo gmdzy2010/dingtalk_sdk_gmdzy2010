@@ -1,13 +1,14 @@
-## 钉钉`非官方版`SDK
+## 钉钉`非官方版`SDK(v0.2.4)
 
 ### 项目简介
 --------------------  
 本SDK非官方提供，代码简单，同时不必担心在SDK当中有什么恶意代码。   
-钉钉官方只提供了java，node.js以及php版sdk，python版没有？恰好最近业务需要，遂准备给钉钉写一整套SDK，不过钉钉的全部API有200+，测试是个大工程，其中很多业务用不上，所以先把基本的功能实现，后续的更新会把所有的功能陆陆续续补全，放出更新计划   
+钉钉官方只提供了JAVA，NODE.JS以及PHP版SDK，python版没有？恰好最近业务需要，遂准备给钉钉写一整套SDK，不过钉钉的全部API有200+，测试是个大工程，其中很多接口业务用不上，所以先把基本的功能实现，后续的更新会把所有的功能陆陆续续补全。   
 
 ### 使用帮助
-1.[SDK文档](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/blob/master/docs.md)        
-2.[使用示例](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/blob/master/doc_for_bms.md)      
+--------------------  
+>[SDK文档](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/blob/master/docs.md)        
+>[使用示例](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010/blob/master/doc_for_bms.md)      
     
 ### 目前进度
 --------------------  
