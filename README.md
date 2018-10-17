@@ -1,6 +1,7 @@
 ## 钉钉`非官方版`SDK
 
 
+[![GitHub release](https://img.shields.io/github/release/gmdzy2010/dingtalk_sdk_gmdzy2010.svg)](https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010)
 [![PyPI](https://img.shields.io/pypi/v/dingtalk-sdk-gmdzy2010.svg)](https://pypi.org/project/dingtalk-sdk-gmdzy2010/)
 
 
