@@ -1,4 +1,8 @@
-## 钉钉`非官方版`SDK(v0.2.4)
+## 钉钉`非官方版`SDK
+
+
+[![PyPI](https://img.shields.io/pypi/v/dingtalk-sdk-gmdzy2010.svg)](https://pypi.org/project/dingtalk-sdk-gmdzy2010/)
+
 
 ### 项目简介
 --------------------  
