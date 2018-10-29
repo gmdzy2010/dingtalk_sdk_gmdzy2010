@@ -16,7 +16,7 @@ class AccessTokenRequest(BaseRequest):
 
     Return: the access_token of dingtalk api.
 
-    doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/vt6v7m
+    doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/gh60vz
     """
     request_url = settings.GET_TOKEN
     
