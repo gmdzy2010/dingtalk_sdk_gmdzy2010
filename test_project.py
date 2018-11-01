@@ -1,4 +1,4 @@
-from dingtalk_sdk_gmdzy2010.authority_request import AccessTokenRequest
+from .dingtalk_sdk_gmdzy2010.authority_request import AccessTokenRequest
 
 
 appkey = "a key which is definitely invalid"
