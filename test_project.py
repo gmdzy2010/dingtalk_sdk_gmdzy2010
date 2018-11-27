@@ -17,4 +17,3 @@ def set_authorization(appkey, appsecret):
 def test_answer():
     response = set_authorization(appkey, appsecret)
     assert response["errmsg"] == "test"
-
