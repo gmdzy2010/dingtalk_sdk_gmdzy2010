@@ -52,4 +52,3 @@ class TestModuleUser:
         request.request_method = "get"
         response = request.get_json_response()
         assert response["errmsg"] == "找不到该用户"
-
