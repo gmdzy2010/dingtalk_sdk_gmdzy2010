@@ -1,6 +1,6 @@
 import os
 from dingtalk_sdk_gmdzy2010.authority_request import (
-    AccessTokenRequest, AuthAddressBookRequest
+    AccessTokenRequest, PersistentCodeRequest, AuthAddressBookRequest
 )
 from dingtalk_sdk_gmdzy2010.user_request import (
     DeptUserRequest, AdminUsersRequest, DeptUsersRequest,
@@ -39,6 +39,15 @@ class TestModuleAuthority:
         params = {"access_token": get_token()}
         request = AuthAddressBookRequest(params=params)
         request.request_method = "get"
+        response = request.get_json_response()
+        assert response["errmsg"] == "ok"
+
+    def test_persistent_code(self):
+        """To test whether a correct persistent code could be return."""
+        params = {"access_token": get_token()}
+        data = {"tmp_auth_code": ""}
+        request = PersistentCodeRequest(params=params, json=data)
+        request.request_method = "post"
         response = request.get_json_response()
         assert response["errmsg"] == "ok"
 

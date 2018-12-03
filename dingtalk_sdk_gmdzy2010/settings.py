@@ -16,6 +16,12 @@ GET_TOKEN = URL_ROOT + "gettoken"
 
 AUTH_ADDRESS_BOOK = URL_ROOT + "auth/scopes"
 
+GET_PERSISTENT_CODE = URL_ROOT + "sns/get_persistent_code"
+
+GET_SNS_TOKEN = URL_ROOT + "sns/get_sns_token"
+
+GET_USERINFO = URL_ROOT + "sns/getuserinfo"
+
 # Department management
 
 DEPT_ROOT = URL_ROOT + "department/"
