@@ -30,7 +30,7 @@ SnsTokenRequest(BaseRequest):  获取用户持久授权码
 >SnsTokenRequest.`get_sns_token()`: 该方法获取用户sns_token的值        
 >SnsTokenRequest.`get_expiring_time()`: 该方法获取用户token过期时间        
 
-UserInfoRequest(BaseRequest):  获取用户持久授权码   
+UserInfoRequest(BaseRequest):  获取用户信息   
 >UserInfoRequest.`get_user_info()`: 该方法获取用户钉钉信息（昵称等）        
 
 AuthAddressBookRequest(BaseRequest):  获取钉钉通讯录权限范围   
