@@ -21,10 +21,12 @@ class DeptRequest(BaseRequest):
     
     def get_dept_name(self):
         """Method to get the department name"""
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return self.json_response.get("name", None)
     
     def get_dept_manager_ids(self):
         """Method to get the id list of department manager."""
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return self.json_response.get("deptManagerUseridList", None)
 
 
@@ -55,6 +57,7 @@ class DeptsRequest(BaseRequest):
         if dept_name is not None:
             depts = [dept for dept in depts if dept["name"] == dept_name]
         depts = [{"id": dept["id"], "name": dept["name"]} for dept in depts]
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return depts if fetch_child else depts[0]
 
 
@@ -77,6 +80,7 @@ class SubDeptIdsRequest(BaseRequest):
     
     def get_sub_dept_ids(self):
         """Method to get the department list"""
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return self.json_response.get("sub_dept_id_list", None)
 
 
@@ -100,4 +104,5 @@ class ParentDeptPathRequest(BaseRequest):
     
     def get_parent_dept_path(self):
         """Method to get the department list"""
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return self.json_response.get("parentIds", None)

@@ -26,6 +26,30 @@ class AccessTokenRequest(BaseRequest):
         return access_token
 
 
+class SnsAccessTokenRequest(BaseRequest):
+    """
+    Description: The sns access token is globally valid within 7200 seconds.
+    Note that this access token is just for the sns authentication, which is
+    different from access token for global authentication
+
+    parameter_R: <appid>, <appsecret>
+    parameter_O: None
+
+    post_data_R: None
+    post_data_O: None
+
+    Return: the sns access_token of dingtalk api.
+
+    doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/gh60vz
+    """
+    request_url = settings.GET_SNS_ACCESS_TOKEN
+    
+    def get_sns_access_token(self):
+        access_token = self.json_response.get("access_token", None)
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
+        return access_token
+
+
 class PersistentCodeRequest(BaseRequest):
     """
     Description: The persistent_code, openid and unionid are contained in the
@@ -139,4 +163,5 @@ class AuthAddressBookRequest(BaseRequest):
     request_url = settings.AUTH_ADDRESS_BOOK
     
     def get_auth_org_scopes(self):
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return self.json_response.get("auth_org_scopes", None)

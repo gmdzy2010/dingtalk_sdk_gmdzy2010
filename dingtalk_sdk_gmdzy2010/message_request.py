@@ -24,6 +24,7 @@ class WorkNoticeRequest(BaseRequest):
     def get_task_id(self):
         """Method to get all department members."""
         task_id = self.json_response.get("task_id", None)
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return task_id
 
 
@@ -47,6 +48,7 @@ class GetWorkNoticeSendProgressRequest(BaseRequest):
     def get_progress(self):
         """Method to get the progress of work notice sending."""
         progress = self.json_response.get("progress", None)
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return progress
 
 
@@ -70,6 +72,7 @@ class GetWorkNoticeSendResultRequest(BaseRequest):
     def get_send_result(self):
         """Method to get the progress of work notice sending."""
         send_result = self.json_response.get("send_result", None)
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return send_result
 
 
@@ -93,6 +96,7 @@ class CreateGroupChatRequest(BaseRequest):
     def get_chat_id(self):
         """Method to get chatid of group created."""
         chat_id = self.json_response.get("chatid", None)
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return chat_id
 
 
@@ -136,10 +140,12 @@ class GetGroupChatRequest(BaseRequest):
         """Method to get chatid of group created."""
         chat_info = self.json_response.get("chat_info", None)
         self.chat_info = chat_info
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return chat_info
     
     def get_specified_group_user_ids(self):
         user_ids = self.chat_info.get("useridlist", None)
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return user_ids
 
 
@@ -162,6 +168,7 @@ class SendGroupChatRequest(BaseRequest):
     def get_message_id(self):
         """Method to get messageId of group created."""
         message_id = self.json_response.get("messageId", None)
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return message_id
 
 
@@ -185,4 +192,5 @@ class GetReadGroupChatUserIdsRequest(BaseRequest):
     def get_read_user_ids(self):
         """Method to get chatid of group created."""
         read_user_ids = self.json_response.get("readUserIdList", None)
+        self.logger.info("%s\t%s" % (self.request_method, self.request_url))
         return read_user_ids

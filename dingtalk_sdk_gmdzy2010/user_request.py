@@ -130,3 +130,27 @@ class DeptUserIdsRequest(BaseRequest):
         """Method to get all department members."""
         dept_user_ids = self.json_response.get("userIds", None)
         return dept_user_ids
+
+
+class UseridByUnionidRequest(BaseRequest):
+    """
+    Description: The response of UseridByUnionidRequest contains wanted userid
+    by unionid. Attention! this access token is the global access token, not
+    the sns access token.
+
+    parameter_R: <access_token>, <unionid>
+    parameter_O: None
+
+    post_data_R: None
+    post_data_O: None
+
+    Return: userid.
+
+    doc_links: https://open-doc.dingtalk.com/microapp/serverapi2/ege851
+    """
+    request_url = settings.GET_USER_ID_BY_UNIONID
+    
+    def get_userid(self):
+        """Method to get all department members."""
+        userid = self.json_response.get("userid", None)
+        return userid

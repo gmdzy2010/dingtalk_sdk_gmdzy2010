@@ -16,6 +16,8 @@ GET_TOKEN = URL_ROOT + "gettoken"
 
 AUTH_ADDRESS_BOOK = URL_ROOT + "auth/scopes"
 
+GET_SNS_ACCESS_TOKEN = URL_ROOT + "sns/gettoken"
+
 GET_PERSISTENT_CODE = URL_ROOT + "sns/get_persistent_code"
 
 GET_SNS_TOKEN = URL_ROOT + "sns/get_sns_token"
@@ -47,6 +49,8 @@ GET_DEPT_USERS = USER_ROOT + "listbypage"
 GET_DEPT_USERS_SIMPLE = USER_ROOT + "simplelist"
 
 GET_DEPT_USER_IDS = USER_ROOT + "getDeptMember"
+
+GET_USER_ID_BY_UNIONID = USER_ROOT + "getUseridByUnionid"
 
 # Work notice
 

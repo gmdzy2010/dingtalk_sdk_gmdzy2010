@@ -1,4 +1,5 @@
 import os
+import requests
 from dingtalk_sdk_gmdzy2010.authority_request import (
     AccessTokenRequest, PersistentCodeRequest, AuthAddressBookRequest
 )
