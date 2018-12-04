@@ -17,6 +17,22 @@ BaseRequest:  所有钉钉请求的超类，提供一些通用属性与实例方
 AccessTokenRequest(BaseRequest):  获取钉钉access_token   
 >AccessTokenRequest.`get_access_token()`: 该方法获取access_token的值        
 
+SnsAccessTokenRequest(BaseRequest):  获取sns（第三方扫码登陆）access_token   
+>SnsAccessTokenRequest.`get_sns_access_token()`: 该方法获取access_token的值        
+
+PersistentCodeRequest(BaseRequest):  获取用户持久授权码   
+>PersistentCodeRequest.`get_openid()`: 该方法获取用户openid的值        
+>PersistentCodeRequest.`get_unionid()`: 该方法获取用户unionid的值        
+>PersistentCodeRequest.`get_persistent_code()`: 该方法获取用户持久授权码        
+>PersistentCodeRequest.`get_ticket_for_sns_token()`: 该方法是一个组合方法，为扫码登陆做准备        
+
+SnsTokenRequest(BaseRequest):  获取用户持久授权码   
+>SnsTokenRequest.`get_sns_token()`: 该方法获取用户sns_token的值        
+>SnsTokenRequest.`get_expiring_time()`: 该方法获取用户token过期时间        
+
+UserInfoRequest(BaseRequest):  获取用户持久授权码   
+>UserInfoRequest.`get_user_info()`: 该方法获取用户钉钉信息（昵称等）        
+
 AuthAddressBookRequest(BaseRequest):  获取钉钉通讯录权限范围   
 >AuthAddressBookRequest.`get_auth_org_scopes()`: 该方法获取通讯录权限范围     
 
@@ -37,6 +53,9 @@ DeptUsersSimpleRequest(BaseRequest):  获取部门成员的简要信息
 
 DeptUserIdsRequest(BaseRequest):  获取部门成员的ID列表   
 >DeptUserIdsRequest.`get_dept_user_ids()`: 该方法获取部门成员的ID列表     
+
+UseridByUnionidRequest(BaseRequest):  根据unionid获取userid   
+>UseridByUnionidRequest.`get_userid()`: 该方法根据unionid获取userid     
 
 ### department_request.py
 DeptRequest(BaseRequest):  获取部门详细信息   
