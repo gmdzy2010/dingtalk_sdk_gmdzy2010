@@ -1,7 +1,11 @@
 site_name: 钉钉Python版SDK
 
+repo_url: https://github.com/gmdzy2010/dingtalk_sdk_gmdzy2010
+
 nav:
-- 项目简介: 'index.md'
-- 使用示例: 'demo.md'
-- 接口文档: 'api.md'
-- 更新日志: 'changelog.md'
+- '项目简介': 'index.md'
+- '使用示例': 'demo.md'
+- '接口文档': 'api.md'
+- '更新日志': 'changelog.md'
+
+theme: mkdocs
