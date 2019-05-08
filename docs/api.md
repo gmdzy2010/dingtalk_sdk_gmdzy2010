@@ -24,7 +24,7 @@ SnsTokenRequest._get_expiring_time()_|获取用户token过期时间
 UserInfoRequest._get_user_info()_|获取用户钉钉信息（昵称等）
 AuthAddressBookRequest._get_auth_org_scopes()_|获取通讯录权限范围
 
-### user_request.py
+#### user_request.py
 方法（属性）|说明 
 :---|:---
 DeptUserRequest._get_unionid()_|获成员的unionid
@@ -36,7 +36,7 @@ DeptUsersSimpleRequest._get_dept_users_brief()_|获取部门成员的简要信�
 DeptUserIdsRequest._get_dept_user_ids()_|获取部门成员的ID列表
 UseridByUnionidRequest._get_userid()_|根据unionid获取userid
 
-### department_request.py
+#### department_request.py
 方法（属性）|说明 
 :---|:---
 DeptRequest._get_dept_name()_|获取部门名称
@@ -45,7 +45,7 @@ DeptsRequest._get_depts(dept_name=None)_|用部门名称获取部门ID，多个�
 SubDeptIdsRequest._get_sub_dept_ids()_|获取获取子部门ID列表
 DeptUserIdsRequest._get_parent_dept_path()_|获取部门的父部门路径，以ID表示
 
-### message_request.py
+#### message_request.py
 方法（属性）|说明 
 :---|:---
 DeptRequest._get_task_id()_|获取发送工作通知的ID
