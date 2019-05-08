@@ -31,7 +31,7 @@ class TestModuleAuthority:
         request = AccessTokenRequest(params=params)
         request.request_method = "get"
         response = request.get_json_response()
-        assert response["errmsg"] == "不合法的corpid或corpsecret"
+        assert response["errmsg"] == "不合法的appKey或appSecret"
     
     def test_address_book_scope(self):
         """To test the given scope of address book"""
