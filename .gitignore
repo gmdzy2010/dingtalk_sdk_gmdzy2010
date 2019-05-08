@@ -1,0 +1,12 @@
+/settings.py
+core.py
+.idea/
+__pycache__/
+*.pyc
+sdist/
+build/
+.github/
+.cache/
+*.logs
+dist/
+
