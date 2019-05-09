@@ -6,6 +6,7 @@ nav:
 - '项目简介': 'index.md'
 - '使用示例': 'demo.md'
 - '接口文档': 'api.md'
+- 'WEB开发组件': 'utils.md'
 - '更新日志': 'changelog.md'
 
 theme: mkdocs

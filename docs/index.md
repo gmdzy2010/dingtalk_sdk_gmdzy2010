@@ -2,7 +2,7 @@
 [![PyPI](https://img.shields.io/pypi/v/dingtalk-sdk-gmdzy2010.svg)](https://pypi.org/project/dingtalk-sdk-gmdzy2010/)
 [![Documentation Status](https://readthedocs.org/projects/dingtalk-sdk-gmdzy2010/badge/?version=latest)](https://dingtalk-sdk-gmdzy2010.readthedocs.io/zh/latest/?badge=latest)
 [![Build Status](https://travis-ci.org/gmdzy2010/dingtalk_sdk_gmdzy2010.svg?branch=master)](https://travis-ci.org/gmdzy2010/dingtalk_sdk_gmdzy2010)  
-钉钉官方只提供了JAVA，NODE.JS以及PHP版SDK，python版没有？恰好最近业务需要，遂准备给钉钉写一整套SDK，持续更新中。
+钉钉官方没有提供Python版SDK，恰好最近业务需要，遂准备给钉钉写一整套SDK，持续更新中。
 
 ### 安装使用
 ```bash
@@ -27,9 +27,8 @@ pip install dingtalk-sdk-gmdzy2010
 ...|...|...
 待更新|...|...
 
-### 结语
-有任何疑问，请新开issue或者fork后提供分支，或者发送站内信，谢谢关注
-
+### 维护
+欢迎issue/fork，或者发送GitHub站内信
 
 ### 致谢
 感谢钉钉的官方文档，感谢大家的关注与耐心，当然还有自己的辛勤付出:p  
